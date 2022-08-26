@@ -29,10 +29,8 @@ public class Tests {
 	private WebDriver driver;
 	ArrayList<String> tabs;
 	
-
 	@BeforeMethod
 	public void setUp() {
-		DesiredCapabilities caps = new DesiredCapabilities();
 		System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		//driver.manage().window().maximize();
@@ -44,12 +42,12 @@ public class Tests {
 		JavascriptExecutor javaScriptExecutor = (JavascriptExecutor)driver;
 		String googleWindow = "window.open('http://ww.google.com')";
 		javaScriptExecutor.executeScript(googleWindow);
-		
 		tabs = new ArrayList<String> (driver.getWindowHandles());
 		/* driver.navigate().to("https://demo.guru99.com/selenium/newtours/"); */
+		
 
-		Helpers helper = new Helpers();
-		helper.sleepSeconds(5);
+		/*Helpers helper = new Helpers();
+		helper.sleepSeconds(5);*/
 	}
 
 	@Test
